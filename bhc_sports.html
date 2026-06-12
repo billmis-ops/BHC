@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sports Psychology & Performance Counseling | Behavioral Health Clinic</title>
+  <meta name="description" content="Sports psychology and performance counseling for athletes, parents, coaches, schools, and physical therapists across Wisconsin. No referral needed." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Code+Pro:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; padding: 0; }
+
+    :root {
+      --blue: #4BC8E8;
+      --gold: #F5A623;
+      --red: #E8312A;
+      --green: #A8C832;
+      --navy: #1B2A4A;
+      --navy-dark: #0D1A31;
+      --ink: #26344E;
+      --muted: #64748B;
+      --soft: #F4F7FA;
+      --white: #FFFFFF;
+      --border: #DDE6EF;
+      --shadow: 0 18px 50px rgba(13, 26, 49, 0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    .rainbow-bar { height: 5px; background: linear-gradient(90deg, var(--blue), var(--gold), var(--red), var(--green)); }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Source Code Pro", monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: currentColor;
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .01em;
+      transition: transform .16s ease, opacity .16s ease, background .16s ease;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-1px); opacity: .92; }
+    .btn-primary { background: var(--gold); color: var(--navy-dark); }
+    .btn-secondary { border: 1px solid rgba(255,255,255,.24); color: var(--white); background: rgba(255,255,255,.06); }
+    .btn-outline { border: 1px solid var(--border); color: var(--navy); background: var(--white); }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(13,26,49,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    .nav-inner {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--white);
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: conic-gradient(var(--blue) 0 90deg, var(--gold) 90deg 180deg, var(--red) 180deg 270deg, var(--green) 270deg 360deg);
+      box-shadow: 0 0 0 4px rgba(255,255,255,.07);
+      flex: 0 0 auto;
+    }
+
+    .brand-name { font-weight: 800; line-height: 1.1; font-size: 14px; }
+    .brand-name span {
+      display: block;
+      font-family: "Source Code Pro", monospace;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      color: rgba(255,255,255,.52);
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+    .nav-phone {
+      color: rgba(255,255,255,.72);
+      text-decoration: none;
+      font-family: "Source Code Pro", monospace;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(75,200,232,.18), transparent 32%),
+        radial-gradient(circle at 80% 12%, rgba(245,166,35,.18), transparent 28%),
+        linear-gradient(135deg, var(--navy-dark), var(--navy));
+      color: var(--white);
+      padding: 92px 0 78px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(310px, .88fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5.1rem);
+      line-height: .96;
+      letter-spacing: -.055em;
+      font-weight: 900;
+      max-width: 820px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      line-height: 1.75;
+      color: rgba(255,255,255,.72);
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
+    .micro-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      color: rgba(255,255,255,.76);
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .pill {
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.07);
+      border-radius: 999px;
+      padding: 8px 12px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.25);
+    }
+
+    .hero-card h2 {
+      font-size: 1.2rem;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .quick-list { display: grid; gap: 12px; }
+    .quick-item {
+      display: grid;
+      grid-template-columns: 14px 1fr;
+      gap: 12px;
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; margin-top: 6px; background: var(--blue); }
+    .quick-item:nth-child(2) .dot { background: var(--gold); }
+    .quick-item:nth-child(3) .dot { background: var(--green); }
+    .quick-item:nth-child(4) .dot { background: var(--red); }
+
+    section { padding: 76px 0; }
+    .section-head { max-width: 720px; margin-bottom: 34px; }
+    .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
+    .section-head.center .eyebrow { justify-content: center; }
+    .section-head.center .eyebrow::before { display: none; }
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.05;
+      letter-spacing: -.04em;
+      color: var(--navy-dark);
+      margin-bottom: 14px;
+    }
+    .section-copy { color: var(--muted); font-size: 1.02rem; max-width: 700px; }
+    .center .section-copy { margin-left: auto; margin-right: auto; }
+
+    .soft { background: var(--soft); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(13,26,49,.04);
+    }
+    .card-label {
+      font-family: "Source Code Pro", monospace;
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--blue);
+      margin-bottom: 9px;
+    }
+    .card h3 { color: var(--navy-dark); font-size: 1.05rem; line-height: 1.25; margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: .93rem; line-height: 1.58; }
+
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .statement {
+      background: var(--navy-dark);
+      color: var(--white);
+      border-radius: 32px;
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .statement::after {
+      content: "";
+      position: absolute;
+      width: 240px;
+      height: 240px;
+      right: -92px;
+      bottom: -90px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,200,50,.28), transparent 66%);
+    }
+    .mindbody {
+      font-size: clamp(3.1rem, 8vw, 6.4rem);
+      line-height: .9;
+      font-weight: 900;
+      letter-spacing: -.06em;
+      margin-bottom: 22px;
+    }
+    .mindbody span:first-child { color: var(--blue); }
+    .mindbody span:last-child { color: var(--green); }
+    .statement p { color: rgba(255,255,255,.72); font-size: 1.05rem; line-height: 1.75; max-width: 540px; }
+
+    .benefit-list { display: grid; gap: 14px; }
+    .benefit {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--white);
+    }
+    .num {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Source Code Pro", monospace;
+      font-weight: 800;
+      color: var(--blue);
+      font-size: 13px;
+    }
+    .benefit h3 { font-size: 1rem; color: var(--navy-dark); margin-bottom: 3px; }
+    .benefit p { color: var(--muted); font-size: .92rem; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .feature {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 22px 20px;
+    }
+    .feature strong { display: block; color: var(--navy-dark); margin-bottom: 7px; font-size: .98rem; }
+    .feature span { display: block; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+
+    .referral {
+      background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+      color: var(--white);
+      border-radius: 32px;
+      padding: 46px;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 32px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+    .referral h2 { color: var(--white); }
+    .referral p { color: rgba(255,255,255,.68); }
+    .referral-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .referral-item {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 16px;
+      border-radius: 16px;
+      font-weight: 700;
+      color: rgba(255,255,255,.88);
+      font-size: .94rem;
+    }
+
+    .final-cta {
+      text-align: center;
+      background: var(--soft);
+    }
+    .cta-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 50px 28px;
+      box-shadow: var(--shadow);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .cta-card h2 { max-width: 720px; margin-left: auto; margin-right: auto; }
+    .cta-card p { color: var(--muted); max-width: 620px; margin: 0 auto 26px; font-size: 1.05rem; }
+    .contact-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .contact-cell {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      text-align: left;
+    }
+    .contact-cell span {
+      display: block;
+      font-family: "Source Code Pro", monospace;
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .contact-cell a { color: var(--navy-dark); text-decoration: none; font-weight: 800; font-size: .93rem; }
+
+    footer {
+      background: var(--navy-dark);
+      color: rgba(255,255,255,.45);
+      padding: 24px 0;
+      font-size: 12px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .hero-grid, .split, .referral { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 18px; }
+      .nav-phone { display: none; }
+      .nav-inner { height: 66px; }
+      .brand-name { font-size: 13px; }
+      .hero { padding: 64px 0 52px; }
+      .hero-card, .statement, .referral, .cta-card { border-radius: 22px; padding: 26px 20px; }
+      .cards, .feature-grid, .referral-list, .contact-row { grid-template-columns: 1fr; }
+      section { padding: 56px 0; }
+      .hero-actions .btn { width: 100%; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="rainbow-bar"></div>
+
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="https://wibehavioralhealth.com">
+        <div class="brand-mark"></div>
+        <div class="brand-name">Behavioral Health Clinic<span>Wisconsin</span></div>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-phone" href="tel:8556078242">855-607-8242</a>
+        <a class="btn btn-primary" href="tel:8556078242">Schedule</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Sports Psychology & Performance Counseling</div>
+        <h1>Your game is <em>mental.</em><br>Train accordingly.</h1>
+        <p class="hero-sub">Sports psychology support for athletes of every level — helping with confidence, focus, performance anxiety, recovery, and resilience.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="tel:8556078242">Schedule an Appointment</a>
+          <a class="btn btn-secondary" href="mailto:appointments@bhclinic.com">Email Us</a>
+        </div>
+        <div class="micro-row">
+          <span class="pill">No Referral Needed</span>
+          <span class="pill">In-Person & Telehealth</span>
+          <span class="pill">Across Wisconsin</span>
+        </div>
+      </div>
+
+      <aside class="hero-card">
+        <h2>Support for the mental side of performance.</h2>
+        <div class="quick-list">
+          <div class="quick-item"><span class="dot"></span><span>Performance anxiety, pressure, and confidence after difficult games or seasons.</span></div>
+          <div class="quick-item"><span class="dot"></span><span>Student athletes balancing school, sports, expectations, and stress.</span></div>
+          <div class="quick-item"><span class="dot"></span><span>Injury recovery, return-to-play stress, motivation, and identity outside the sport.</span></div>
+          <div class="quick-item"><span class="dot"></span><span>Referral support for parents, coaches, schools, and physical therapists.</span></div>
+        </div>
+      </aside>
+    </div>
+  </header>
+
+  <section class="soft">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">Who We Help</div>
+        <h2>Sports psychology is for everyone connected to the game.</h2>
+        <p class="section-copy">Whether you compete, coach, parent, or support athletes clinically, BHC can help address the emotional and mental side of performance.</p>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-label">Athlete</div>
+          <h3>Student athletes balancing sports, school, and stress</h3>
+          <p>Support for focus, pressure, time demands, confidence, and emotional regulation during busy seasons.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Performance</div>
+          <h3>Athletes managing performance anxiety</h3>
+          <p>Tools to manage nerves, reset after mistakes, and stay grounded during practices, games, and competitions.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Recovery</div>
+          <h3>Players recovering mentally after injury</h3>
+          <p>Care for the emotional side of injury, motivation, identity, and confidence while working back to play.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Parents</div>
+          <h3>Parents noticing burnout or pressure</h3>
+          <p>Guidance when a young athlete seems overwhelmed, anxious, withdrawn, frustrated, or unlike themselves.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Coaches</div>
+          <h3>Coaches looking for stronger mental performance tools</h3>
+          <p>A trusted resource for athletes who may need more support than encouragement or practice alone can provide.</p>
+        </div>
+        <div class="card">
+          <div class="card-label">Providers</div>
+          <h3>Physical therapists supporting the whole athlete</h3>
+          <p>Referral support for athletes whose recovery includes confidence, fear of reinjury, or mental health concerns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container split">
+      <div class="statement">
+        <div class="mindbody"><span>Mind</span><br>&<br><span>Body.</span></div>
+        <p>Performance is never only physical. Athletes often carry pressure people around them never fully see — expectations, injury recovery, burnout, confidence struggles, anxiety, and the constant push to keep going.</p>
+      </div>
+      <div>
+        <div class="eyebrow">Why It Matters</div>
+        <h2>The mental game affects confidence, recovery, and wellbeing.</h2>
+        <p class="section-copy">Sports psychology creates space to build healthier mental habits, emotional resilience, and sustainable performance — both in sport and in life.</p>
+        <div style="height:22px"></div>
+        <a class="btn btn-outline" href="tel:8556078242">Start the Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow">Core Focus Areas</div>
+        <h2>What we can work on together.</h2>
+        <p class="section-copy">Care is tailored to each athlete’s needs, sport, age, goals, and current challenges.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature"><strong>Confidence & mindset</strong><span>Rebuilding trust after setbacks, mistakes, or inconsistent performance.</span></div>
+        <div class="feature"><strong>Performance anxiety</strong><span>Managing pressure, nerves, and overthinking before or during competition.</span></div>
+        <div class="feature"><strong>Focus & routines</strong><span>Building mental preparation, reset strategies, and pre-performance habits.</span></div>
+        <div class="feature"><strong>Injury recovery</strong><span>Supporting motivation, fear of reinjury, identity, and emotional adjustment.</span></div>
+        <div class="feature"><strong>Stress & burnout</strong><span>Helping athletes manage expectations, schedules, school, sport, and life demands.</span></div>
+        <div class="feature"><strong>Emotional regulation</strong><span>Tools for staying grounded after mistakes, conflict, pressure, or frustration.</span></div>
+        <div class="feature"><strong>Self-talk</strong><span>Developing healthier internal language during high-pressure moments.</span></div>
+        <div class="feature"><strong>Parent & coach guidance</strong><span>Support for the adults helping athletes navigate pressure and performance.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="referral">
+        <div>
+          <div class="eyebrow">Referrals Welcome</div>
+          <h2>A useful resource for the people around the athlete.</h2>
+          <p>No formal referral is required, but BHC welcomes collaboration with schools, coaches, parents, physical therapists, and healthcare providers supporting athletes across Wisconsin.</p>
+        </div>
+        <div class="referral-list">
+          <div class="referral-item">Schools & Athletic Directors</div>
+          <div class="referral-item">Coaches & Teams</div>
+          <div class="referral-item">Physical Therapists</div>
+          <div class="referral-item">Primary Care Providers</div>
+          <div class="referral-item">Parents & Families</div>
+          <div class="referral-item">Club & Travel Teams</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <div class="cta-card">
+        <div class="eyebrow">No Referral Needed</div>
+        <h2>Ready to strengthen the mental side of performance?</h2>
+        <p>Appointments are available in-person and online. Contact BHC to learn more about sports psychology and performance counseling options.</p>
+        <a class="btn btn-primary" href="tel:8556078242">Schedule Today</a>
+        <div class="contact-row">
+          <div class="contact-cell"><span>Phone</span><a href="tel:8556078242">855-607-8242</a></div>
+          <div class="contact-cell"><span>Email</span><a href="mailto:appointments@bhclinic.com">appointments@bhclinic.com</a></div>
+          <div class="contact-cell"><span>Website</span><a href="https://wibehavioralhealth.com">wibehavioralhealth.com</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 Behavioral Health Clinic · Wisconsin · This page provides general information and is not a replacement for professional mental health advice. For emergencies, call 988 or 911.
+    </div>
+  </footer>
+</body>
+</html>
